@@ -1,0 +1,16 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  exclude: [lib/**.g.dart, lib/utils/icons.dart] #예외처리
+  errors: ## ignore(무시), info(정보), warning(경고), error(오류)
+    invalid_assignment: warning
+    missing_return: error
+    dead_code: warning
+    avoid_print: error
+    todo: info
+
+linter:
+  rules:
+    avoid_print: false
+    depend_on_referenced_packages: false
+    unnecessary_this: false

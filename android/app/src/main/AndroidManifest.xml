@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.junddao.lottoking">
    <application
-        android:label="lottokinggpt"
+        android:label="로또왕 여프로"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

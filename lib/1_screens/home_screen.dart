@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 500),
+      duration: const Duration(milliseconds: 2000),
     );
     _animation = CurvedAnimation(
       parent: _controller,
@@ -126,17 +126,48 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
 
   Widget _buildNumberBalls() {
     List<Widget> children = [];
+    List<double> leftP = [];
+    List<double> topP = [];
     double ballSize = 60.0;
+    double left = 0;
+    double top = 0;
+
+    while (leftP.length < 6) {
+      bool isStop = true;
+      left = Random().nextDouble() * (SizeConfig.screenWidth - ballSize);
+      top = Random().nextDouble() * (SizeConfig.screenHeight * 0.3 - ballSize);
+
+      if (leftP.isEmpty) {
+        leftP.add(left);
+        topP.add(top);
+        continue;
+      }
+      int count = 0;
+      for (int i = 0; i < leftP.length; i++) {
+        if (leftP[i] - ballSize * 0.8 < left &&
+            left < leftP[i] + ballSize * 0.8 &&
+            topP[i] - ballSize * 0.8 < top &&
+            top < topP[i] + ballSize * 0.8) {
+          count++;
+        }
+      }
+      if (count != 0) {
+        continue;
+      }
+
+      if (isStop) {
+        leftP.add(left);
+        topP.add(top);
+      }
+    }
 
     for (int i = 0; i < numbers.length; i++) {
-      double left = Random().nextDouble() * (SizeConfig.screenWidth - ballSize);
-      double top = Random().nextDouble() * (SizeConfig.screenHeight * 0.3 - ballSize);
       children.add(
         AnimatedPositioned(
           duration: const Duration(milliseconds: 500),
           curve: Curves.easeInOut,
-          left: left,
-          top: top,
+          left: leftP[i],
+          top: topP[i],
           child: _buildNumberBall(numbers[i]),
         ),
       );

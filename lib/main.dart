@@ -2,16 +2,17 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_flavor/flutter_flavor.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:package_info_plus/package_info_plus.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:lottokinggpt/4_datasource/local/shared_preferences_provider.dart';
 import 'package:lottokinggpt/index.dart';
 import 'package:lottokinggpt/my_app.dart';
 import 'package:lottokinggpt/utils/observers/riverpod_observer.dart';
 import 'package:lottokinggpt/utils/services/firebase_service.dart';
+import 'package:package_info_plus/package_info_plus.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
-  const isLiveMode = bool.fromEnvironment("flavor", defaultValue: false);
+  // const isLiveMode = bool.fromEnvironment("flavor", defaultValue: false);
+  const isLiveMode = true;
 
   if (isLiveMode) {
     FlavorConfig(

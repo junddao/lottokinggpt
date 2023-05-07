@@ -101,8 +101,8 @@ flutter_icons:
 # 아래는 컴파일 명령
 # flutter pub run flutter_native_splash:create
 flutter_native_splash:
-  image: assets/launcher/flutter_ui_dev_logo.png
-  color: "#fff9f9"
+  image: assets/launcher/splash.png
+  color: "#C05228"
   android_12:
-    image: assets/launcher/flutter_ui_dev_logo.png
-    color: "#fff9f9"
+    image: assets/launcher/splash.png
+    color: "#C05228"

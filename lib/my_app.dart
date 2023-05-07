@@ -23,7 +23,7 @@ class MyApp extends ConsumerWidget {
     final router = ref.watch(goRouterProvider);
     return MyFlavorBanner(
       child: MaterialApp.router(
-        title: '우편함',
+        title: '로또왕 여프로',
         routeInformationProvider: router.routeInformationProvider,
         routeInformationParser: router.routeInformationParser,
         routerDelegate: router.routerDelegate,

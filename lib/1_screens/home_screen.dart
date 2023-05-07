@@ -200,35 +200,37 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
           ),
         ),
         child: Center(
-          child: Column(
-            children: [
-              SizedBox(
-                height: SizeConfig.screenHeight * 0.5,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Lottie.network(
-                      'https://assets5.lottiefiles.com/packages/lf20_SyUX5x.json',
-                      width: 200,
-                      height: 200,
-                    ),
-                    const SizedBox(height: 40),
-                    TextButton(
-                      onPressed: _generateNumbers,
-                      child: const Text(
-                        '여기를 누르세요!',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 24,
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                SizedBox(
+                  height: SizeConfig.screenHeight * 0.5,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Lottie.network(
+                        'https://assets5.lottiefiles.com/packages/lf20_SyUX5x.json',
+                        width: 200,
+                        height: 200,
+                      ),
+                      const SizedBox(height: 40),
+                      TextButton(
+                        onPressed: _generateNumbers,
+                        child: const Text(
+                          '여기를 누르세요!',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 24,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-              Expanded(child: _buildNumberBalls()),
-            ],
+                _buildNumberBalls(),
+              ],
+            ),
           ),
         ),
       ),

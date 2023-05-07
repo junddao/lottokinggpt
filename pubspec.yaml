@@ -93,7 +93,7 @@ flutter:
 # 아래는 컴파일 명령
 # flutter pub run flutter_launcher_icons:main
 flutter_icons:
-  image_path: "assets/launcher/flutter_ui_dev_logo.png"
+  image_path: "assets/launcher/icon.png"
   android: true
   ios: true
 
